@@ -52,6 +52,7 @@ enum MBTItype {
             
         }
     }
+
     
     var howToFriend: String {
         switch self {
@@ -90,7 +91,7 @@ enum MBTItype {
             
         }
     }
-}
+}  
 
 struct Profile: Identifiable {
     var id: UUID = UUID()
