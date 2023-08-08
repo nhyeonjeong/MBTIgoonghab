@@ -49,9 +49,9 @@ enum MBTItype {
             return ""
         case .INTJ :
             return ""
-        
+            
         }
-        
+    }
         var howToFriend: String {
             switch self {
             case .ESTP :
@@ -86,10 +86,11 @@ enum MBTItype {
                 return ""
             case .INTJ :
                 return ""
-            
+                
             }
+        }
     }
-}
+    
 
 struct Profile: Identifiable {
     var id: UUID = UUID()
