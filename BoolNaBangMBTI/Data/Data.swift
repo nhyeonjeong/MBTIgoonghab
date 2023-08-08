@@ -86,8 +86,9 @@ enum MBTItype {
                 return ""
             case .INTJ :
                 return ""
-            
+                
             }
+        }
     }
 }
 
