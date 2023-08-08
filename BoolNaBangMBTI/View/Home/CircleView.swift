@@ -5,6 +5,8 @@
 //  Created by 임병구 on 2023/08/08.
 //
 
+// 참고 사이트 https://www.youtube.com/watch?v=aQ4lid4-Kyc/
+
 import SwiftUI
 
 struct CircleView: View {
