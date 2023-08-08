@@ -27,6 +27,7 @@
 		9A330E582A81220F0031190D /* MBTIInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A330E572A81220F0031190D /* MBTIInfoView.swift */; };
 		9A330E5A2A8122460031190D /* MyInfoChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A330E592A8122460031190D /* MyInfoChangeView.swift */; };
 		9A330E5C2A81225C0031190D /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A330E5B2A81225C0031190D /* SettingView.swift */; };
+		9A7219512A826C810010E898 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7219502A826C810010E898 /* CircleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		9A330E572A81220F0031190D /* MBTIInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTIInfoView.swift; sourceTree = "<group>"; };
 		9A330E592A8122460031190D /* MyInfoChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoChangeView.swift; sourceTree = "<group>"; };
 		9A330E5B2A81225C0031190D /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		9A7219502A826C810010E898 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				9A330E472A8120400031190D /* HowToFriendView.swift */,
 				9A330E412A811E310031190D /* goongHabListView.swift */,
 				9A330E432A811FFD0031190D /* ResultProjectView.swift */,
+				9A7219502A826C810010E898 /* CircleView.swift */,
 				9A330E452A8120270031190D /* ResultRomanticView.swift */,
 			);
 			path = Home;
@@ -227,6 +230,7 @@
 			files = (
 				9A330E582A81220F0031190D /* MBTIInfoView.swift in Sources */,
 				9A330E462A8120270031190D /* ResultRomanticView.swift in Sources */,
+				9A7219512A826C810010E898 /* CircleView.swift in Sources */,
 				9A330E2C2A81137D0031190D /* ContentView.swift in Sources */,
 				9A330E5C2A81225C0031190D /* SettingView.swift in Sources */,
 				9A330E562A8121F00031190D /* MyPageView.swift in Sources */,
