@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B253B732A82742A00EA2E49 /* GoongHabEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B253B722A82742A00EA2E49 /* GoongHabEditView.swift */; };
 		9A330E2A2A81137D0031190D /* BoolNaBangMBTIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A330E292A81137D0031190D /* BoolNaBangMBTIApp.swift */; };
 		9A330E2C2A81137D0031190D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A330E2B2A81137D0031190D /* ContentView.swift */; };
 		9A330E2E2A81137E0031190D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A330E2D2A81137E0031190D /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B253B722A82742A00EA2E49 /* GoongHabEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoongHabEditView.swift; sourceTree = "<group>"; };
 		9A330E262A81137D0031190D /* BoolNaBangMBTI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoolNaBangMBTI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A330E292A81137D0031190D /* BoolNaBangMBTIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolNaBangMBTIApp.swift; sourceTree = "<group>"; };
 		9A330E2B2A81137D0031190D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				9A330E3B2A811CD10031190D /* SafariTestView.swift */,
 				9A330E472A8120400031190D /* HowToFriendView.swift */,
 				9A330E412A811E310031190D /* goongHabListView.swift */,
+				8B253B722A82742A00EA2E49 /* GoongHabEditView.swift */,
 				9A330E432A811FFD0031190D /* ResultProjectView.swift */,
 				9A7219502A826C810010E898 /* CircleView.swift */,
 				9A330E452A8120270031190D /* ResultRomanticView.swift */,
@@ -232,6 +235,7 @@
 				9A330E462A8120270031190D /* ResultRomanticView.swift in Sources */,
 				9A7219512A826C810010E898 /* CircleView.swift in Sources */,
 				9A330E2C2A81137D0031190D /* ContentView.swift in Sources */,
+				8B253B732A82742A00EA2E49 /* GoongHabEditView.swift in Sources */,
 				9A330E5C2A81225C0031190D /* SettingView.swift in Sources */,
 				9A330E562A8121F00031190D /* MyPageView.swift in Sources */,
 				9A330E422A811E310031190D /* goongHabListView.swift in Sources */,
@@ -383,6 +387,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -412,6 +417,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
