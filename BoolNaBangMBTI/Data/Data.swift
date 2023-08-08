@@ -49,8 +49,9 @@ enum MBTItype {
             return ""
         case .INTJ :
             return ""
-        
+            
         }
+    }
         
         var howToFriend: String {
             switch self {
@@ -88,7 +89,6 @@ enum MBTItype {
                 return ""
                 
             }
-        }
     }
 }
 
