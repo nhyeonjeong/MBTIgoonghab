@@ -9,7 +9,9 @@ import SwiftUI
 
 struct goongHabListView: View {
     var body: some View {
-        Text("HowToFriendView")
+        VStack {
+            
+        }
     }
 }
 
