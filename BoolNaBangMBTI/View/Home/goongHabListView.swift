@@ -16,6 +16,7 @@ struct goongHabListView: View {
 
     @State var isShowingEditSheet: Bool = false
     var body: some View {
+
         VStack {
             ///사진, 사용자 MBTI
             HStack {
@@ -107,7 +108,6 @@ struct goongHabListView: View {
         .sheet(isPresented: $isShowingEditSheet) {
             GoongHabEditView()
         }
-
 
     }
 }
