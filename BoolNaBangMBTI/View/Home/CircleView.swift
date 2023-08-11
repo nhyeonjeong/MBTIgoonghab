@@ -16,25 +16,25 @@ struct CircleView: View {
     var body: some View {
         ZStack{
             
-            Color(.blue).ignoresSafeArea()
+            Color(.black).ignoresSafeArea()
             
             
             // 먼지
-            ForEach(1..<100, id: \.self) { index in
-                
-                let xPosition =
-                Array(1...Int(UIScreen.main.bounds.width))
-                    .randomElement() ?? 0
-                let yPosition =
-                Array(1...Int(UIScreen.main.bounds.width))
-                    .randomElement() ?? 0
-                
-                Circle()
-                    .fill(.white)
-                    .frame(width: 3)
-                    .position(x: CGFloat(xPosition), y: CGFloat(yPosition))
-                
-            }
+//            ForEach(1..<100, id: \.self) { index in
+//
+//                let xPosition =
+//                Array(1...Int(UIScreen.main.bounds.width))
+//                    .randomElement() ?? 0
+//                let yPosition =
+//                Array(1...Int(UIScreen.main.bounds.width))
+//                    .randomElement() ?? 0
+//
+//                Circle()
+//                    .fill(.white)
+//                    .frame(width: 3)
+//                    .position(x: CGFloat(xPosition), y: CGFloat(yPosition))
+//
+//            }
             
             
             
@@ -56,12 +56,12 @@ struct CircleView: View {
                         
                         Circle()
                             .stroke(Color.white,lineWidth:5)
-                            .frame(width:30)
+                            .frame(width:20)
                             .position(x: radius * (1 - cos(angle)), y: geo.size.height / 2 - radius * sin(angle))
                     }
                 
             }
-            .frame(width: 420)
+            .frame(width: 70)
             
             GeometryReader { geo in
                 
@@ -79,12 +79,12 @@ struct CircleView: View {
                         
                         Circle()
                             .stroke(Color.white,lineWidth:5)
-                            .frame(width:30)
+                            .frame(width:20)
                             .position(x: radius * (1 - cos(angle)), y: geo.size.height / 2 - radius * sin(angle))
                     }
                 
             }
-            .frame(width: 300)
+            .frame(width: 140)
             
             GeometryReader { geo in
                 
@@ -102,12 +102,12 @@ struct CircleView: View {
                         
                         Circle()
                             .stroke(Color.white,lineWidth:5)
-                            .frame(width:30)
+                            .frame(width:20)
                             .position(x: radius * (1 - cos(angle)), y: geo.size.height / 2 - radius * sin(angle))
                     }
                 
             }
-            .frame(width: 150)
+            .frame(width: 210)
             
             GeometryReader { geo in
                 
@@ -125,22 +125,15 @@ struct CircleView: View {
                         
                         Circle()
                             .stroke(Color.white,lineWidth:5)
-                            .frame(width:30)
+                            .frame(width:20)
                             .position(x: radius * (1 - cos(angle)), y: geo.size.height / 2 - radius * sin(angle))
                     }
                 
             }
-            .frame(width: 80)
+            .frame(width: 280)
             
             
             
-            Circle()
-                .fill(.gray.opacity(0.4))
-                .frame(width: 301)
-            
-            Circle()
-                .fill(.gray.opacity(0.5))
-                .frame(width: 280)
             
             GeometryReader { reader in
                 
@@ -175,7 +168,9 @@ struct CircleView: View {
                     }
                 
             }
-            .frame(width: 250)
+            .frame(width: 340)
+            
+            
             
       
             
@@ -185,7 +180,7 @@ struct CircleView: View {
             Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) {
                 timer in
                 withAnimation {
-                    progress += 0.04
+                    progress += 0.01
                 }
             }
             
