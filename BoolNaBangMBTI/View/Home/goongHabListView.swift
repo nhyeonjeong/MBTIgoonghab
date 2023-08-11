@@ -12,6 +12,8 @@ struct goongHabListView: View {
     //임시 그림
     var url: URL = URL(string: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MTNfODYg%2FMDAxNjgzOTgwNjAzNDYy.tLf7sFR2klD3k7P0kQAPDAY4LuqkMjVMVUNr0Wf1Tpog.u2Lhsdc3CZ30D2wsuwj3TNatWsRgdKQIWcOii5aS5ucg.PNG.zxc46055%2Fistp_%25281%2529.png&type=sc960_832") ?? URL(string: "http://naver.com")!
     
+    @ObservedObject var opponentStore: OpponentStore = OpponentStore()
+    
     let resultNumber: Bool = true
 
     @State var isShowingEditSheet: Bool = false
@@ -41,13 +43,13 @@ struct goongHabListView: View {
             
             ///스크롤 뷰
             ScrollView {
-                ForEach(0..<15) { _ in
-                    Text("김김김       ISTP")
+                ForEach(opponentStore.opponents) { member in
+                    Text("\(member.oppName)    \(member.oppMbti.rawValue)")
                         
                 }
                 .border(.green)
                 .frame(width: 250)
-            }.border(.pink)
+            }//.border(.pink)
                 .font(.title)
                 .padding(10)
             
@@ -106,9 +108,8 @@ struct goongHabListView: View {
        
         }
         .sheet(isPresented: $isShowingEditSheet) {
-            GoongHabEditView()
+            GoongHabEditView(opponentStore: opponentStore, isShowingEditSheet: $isShowingEditSheet)
         }
-
     }
 }
 

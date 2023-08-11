@@ -10,11 +10,10 @@ import Foundation
 
 //
 
-enum MBTItype {
+enum MBTItype: String, CaseIterable { //picker 위한 프로토콜
     case ESTP, ESTJ, ESFP, ESFJ, ENFP, ENFJ, ENTP, ENTJ
     case ISTP, ISTJ, ISFP, ISFJ, INFP, INFJ, INTP, INTJ
-    
-    
+
     var imageURL: String {
         switch self {
         case .ESTP :
@@ -49,9 +48,11 @@ enum MBTItype {
             return ""
         case .INTJ :
             return ""
+
             
         }
     }
+
     
     var howToFriend: String {
         switch self {
@@ -87,10 +88,9 @@ enum MBTItype {
             return ""
         case .INTJ :
             return ""
-            
         }
     }
-}
+}  
 
 struct Profile: Identifiable {
     var id: UUID = UUID()
@@ -106,8 +106,21 @@ struct Opponent: Identifiable {
     var oppMbti: MBTItype
 }
 
-class OpponentStore {
-    var opponents: [Opponent] = []
+class OpponentStore : ObservableObject{
+    @Published var opponents: [Opponent] = [
+        Opponent(oppName: "윤진영", oppMbti: .ISTP)
+    ]
     
+    func removeOpp(at offsets: IndexSet) {
+        opponents.remove(atOffsets: offsets)
+        
+    }
+    
+    func addOpp(opponent: Opponent) {
+
+        opponents.append(opponent)
+
+        
+    }
 }
 
