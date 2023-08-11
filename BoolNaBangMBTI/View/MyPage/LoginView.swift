@@ -18,3 +18,16 @@ struct LoginView_Previews: PreviewProvider {
         LoginView()
     }
 }
+
+//extension Text{
+//    enum customTextCase {
+//        case title, set
+//    }
+//    
+//    func setTextType(textCase: customTextCase) -> some View {
+//        switch textCase {
+//        case .title:
+//            return self.font(.system(size:49, weight: .bold, design: .default))
+//        }
+//    }
+//}

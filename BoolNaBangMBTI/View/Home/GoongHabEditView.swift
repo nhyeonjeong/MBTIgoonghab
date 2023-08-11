@@ -8,13 +8,86 @@
 import SwiftUI
 
 struct GoongHabEditView: View {
+
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
+
+    
+    @ObservedObject var opponentStore: OpponentStore
+    @Binding var isShowingEditSheet: Bool
+    
+    @State var newName: String = ""
+    @State var newMbti: MBTItype = MBTItype.ESTP //피커
+    
+    var body: some View {
+        NavigationStack {
+            VStack {
+                HStack {
+                    TextField("이름", text: $newName)
+//                    TextField("mbti", text: $newMbti)
+                    Spacer()
+                    Picker("MBTI", selection: $newMbti) {
+                        ForEach(MBTItype.allCases, id:\.self) { mbti in
+                            Text(String(describing: mbti)).tag(mbti)
+
+                        }
+
+                    }
+                    Spacer()
+                    Button {//이름비어있으면 추가안되도록 추가로 해야함
+                        opponentStore.addOpp(opponent: Opponent(oppName: newName, oppMbti: newMbti))
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                    
+                }.padding()
+                    .border(.red)
+                
+                List {
+                    ForEach (opponentStore.opponents) {member in
+                        HStack {
+                            Text("\(member.oppName)")
+                            Spacer()
+                            Text("\(member.oppMbti.rawValue)")
+                            Spacer()
+                        }
+                    }
+                    //삭제
+                    .onDelete { indexSet in
+                        opponentStore.removeOpp(at: indexSet)
+                    }
+                    
+                }.listStyle(.plain)
+                
+                
+                
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading){
+                    EditButton()
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("완료") {
+                        isShowingEditSheet.toggle()
+                    }
+                }
+            }
+        }
+        
+    }
+    
+
 }
 
 struct GoongHabEditView_Previews: PreviewProvider {
     static var previews: some View {
-        GoongHabEditView()
+
+
+
+ 
+        GoongHabEditView(opponentStore: OpponentStore(), isShowingEditSheet: .constant(true))
+        
+
     }
 }
