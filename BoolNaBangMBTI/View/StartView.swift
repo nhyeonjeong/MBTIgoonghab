@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct StartView: View {
+    // 데이터 틀 만들고 이름과 MBTI
+    // 선택한거 저장할 수 있도록 만들기
     
     // 텍스트 필드 저장 변수
     @State var nameField: String = ""
@@ -15,90 +17,114 @@ struct StartView: View {
     // Picker 선택지 변수
     var eiPicker: [String] = ["E", "I"]
     @State var eiSelect: String = ""
+    @State var eiIndex: Int = 0
     var snPicker: [String] = ["S", "N"]
     @State var snSelect: String = ""
+    @State var snIndex: Int = 0
     var ftPicker: [String] = ["F", "T"]
     @State var ftSelect: String = ""
+    @State var ftIndex: Int = 0
     var pjPicker: [String] = ["P", "J"]
     @State var pjSelect: String = ""
+    @State var pjIndex: Int = 0
+    
+//    enum MBTI: String, Identifiable{
+//        case E, I, S, N, F, T, P, J
+//        var id: Self { self }
+//    }
 
     // View
     var body: some View {
-        
-        VStack {
-            
-            // 이름 입력 텍스트 필드
-            // 입력창 가운데로 옮기는거 찾아보기
-            TextField("이름을 입력하세요", text: $nameField)
-//                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .frame(width: 200, height: 50, alignment: .center)
-                .background(Color.gray.opacity(0.2))
-//                .foregroundColor(.gray)
-                .cornerRadius(15)
-                .padding(50)
-                    
-            // picker? 2지선다 버튼?
-            // Picker로 2지선다 가능
-            // 위에서 아래로 가자
-            // MBTI 선택 Picker
-            Group {
-                Text("👇Select MBTI👇")
-                    
-                Picker("Select E/I", selection: $eiSelect) {
-                    ForEach(eiPicker, id: \.self){
-                        Text($0)
-                    }
-                }
-                .pickerStyle(.segmented)
-                .frame(width: 150, height: 30)
-                Picker("Select S/N", selection: $snSelect) {
-                    ForEach(snPicker, id: \.self){
-                        Text($0)
-                    }
-                }
-                .pickerStyle(.segmented)
-                .frame(width: 150, height: 30)
-                Picker("Select F/T", selection: $ftSelect) {
-                    ForEach(ftPicker, id: \.self){
-                        Text($0)
-                    }
-                }
-                .pickerStyle(.segmented)
-                .frame(width: 150, height: 30)
-                Picker("Select P/J", selection: $pjSelect) {
-                    ForEach(pjPicker, id: \.self){
-                        Text($0)
-                    }
-                }
-                .pickerStyle(.segmented)
-                .frame(width: 150, height: 30)
-            }
-            
-            // 확인하고 넘어가는 버튼
-            Button {
-                //
-            } label: {
-                Text("여기까지")
-                    .frame(width: 120, height: 60)
-                    .foregroundColor(.white)
-            }
-            .buttonStyle(BorderedButtonStyle())
-//            .background(Color("#2A2F58"))
-            .tint(.indigo)
-            .cornerRadius(25)
-            .padding(30)
+        NavigationStack {
+            VStack {
 
-            // MBTI 검사로 가는 텍스트, 버튼
-            HStack{
-                Text("MBTI 검사하러 가기 ➡️")
-                Button {
-                    //
+                // 이름 입력 텍스트 필드
+                // 입력창 가운데로 옮기는거 찾아보기
+                // 안나옴 하
+                TextField("이름을 입력하세요", text: $nameField)
+                //                .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .frame(width: 200, height: 50, alignment: .center)
+                    .background(Color.gray.opacity(0.2))
+                //                .foregroundColor(.gray)
+                    .cornerRadius(15)
+                    .padding(50)
+                
+                // picker? 2지선다 버튼?
+                // Picker로 2지선다 가능
+                // 위에서 아래로 가자
+                // MBTI 선택 Picker
+                Group {
+                    Text("👇Select MBTI👇")
+
+                    VStack {
+                        Picker("Select E/I", selection: $eiIndex) {
+                            ForEach(0..<2) {
+                                Text(eiPicker[$0])
+                            }
+                        }
+                        .pickerStyle(.segmented)
+                        .frame(width: 150, height: 30)
+                        Text("\(eiPicker[eiIndex])")
+                    }
+                    VStack {
+                        Picker("Select S/N", selection: $snIndex) {
+                            ForEach(0..<2){
+                                Text(snPicker[$0])
+                            }
+                        }
+                        .pickerStyle(.segmented)
+                        .frame(width: 150, height: 30)
+                        Text("\(snPicker[snIndex])")
+                    }
+                    VStack {
+                        Picker("Select F/T", selection: $ftIndex) {
+                            ForEach(0..<2){
+                                Text(ftPicker[$0])
+                            }
+                        }
+                        .pickerStyle(.segmented)
+                        .frame(width: 150, height: 30)
+                        Text("\(ftPicker[ftIndex])")
+                    }
+                    VStack {
+                        Picker("Select P/J", selection: $pjIndex) {
+                            ForEach(0..<2){
+                                Text(pjPicker[$0])
+                            }
+                        }
+                        .pickerStyle(.segmented)
+                        .frame(width: 150, height: 30)
+                        Text("\(pjPicker[pjIndex])")
+                    }
+                }
+                
+                // 확인하고 넘어가는 버튼
+                // 다음화면 -> HomeView()
+                NavigationLink {
+                    HomeView()
                 } label: {
-                    Image("SearchMBTI")
-                        .clipShape(Circle())
-                        .shadow(radius: 3)
+                    Text("여기까지")
+                        .font(.system(size: 22))
+                        .frame(width: 120, height: 60)
+                        .foregroundColor(.white)
                 }
-
+                .buttonStyle(.borderedProminent)
+                .tint(.indigo)
+                .cornerRadius(25)
+                .padding(30)
+                
+                // MBTI 검사로 가는 텍스트, 버튼
+                // 다음화면 -> SafariTestView()
+                HStack{
+                    Text("MBTI 검사하러 가기 ➡️")
+                    NavigationLink {
+                        SafariTestView()
+                    } label: {
+                        Image("SearchMBTI")
+                            .clipShape(Circle())
+                            .shadow(radius: 3)
+                    }
+                }
             }
         }
     }
