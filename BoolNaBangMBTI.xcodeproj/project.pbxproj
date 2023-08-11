@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8B253B732A82742A00EA2E49 /* GoongHabEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B253B722A82742A00EA2E49 /* GoongHabEditView.swift */; };
+		9909BA382A866E100095D975 /* HTFButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9909BA372A866E100095D975 /* HTFButtonView.swift */; };
 		9A330E2A2A81137D0031190D /* BoolNaBangMBTIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A330E292A81137D0031190D /* BoolNaBangMBTIApp.swift */; };
 		9A330E2C2A81137D0031190D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A330E2B2A81137D0031190D /* ContentView.swift */; };
 		9A330E2E2A81137E0031190D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A330E2D2A81137E0031190D /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		8B253B722A82742A00EA2E49 /* GoongHabEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoongHabEditView.swift; sourceTree = "<group>"; };
+		9909BA372A866E100095D975 /* HTFButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTFButtonView.swift; sourceTree = "<group>"; };
 		9A330E262A81137D0031190D /* BoolNaBangMBTI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoolNaBangMBTI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A330E292A81137D0031190D /* BoolNaBangMBTIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolNaBangMBTIApp.swift; sourceTree = "<group>"; };
 		9A330E2B2A81137D0031190D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				9A330E392A811C760031190D /* HomeView.swift */,
 				9A330E3B2A811CD10031190D /* SafariTestView.swift */,
 				9A330E472A8120400031190D /* HowToFriendView.swift */,
+				9909BA372A866E100095D975 /* HTFButtonView.swift */,
 				9A330E412A811E310031190D /* goongHabListView.swift */,
 				8B253B722A82742A00EA2E49 /* GoongHabEditView.swift */,
 				9A330E432A811FFD0031190D /* ResultProjectView.swift */,
@@ -242,6 +245,7 @@
 				9A330E4E2A8121580031190D /* CommunityDetailView.swift in Sources */,
 				9A330E3C2A811CD10031190D /* SafariTestView.swift in Sources */,
 				9A330E442A811FFD0031190D /* ResultProjectView.swift in Sources */,
+				9909BA382A866E100095D975 /* HTFButtonView.swift in Sources */,
 				9A330E4A2A8120D30031190D /* CommunityListView.swift in Sources */,
 				9A330E502A81216C0031190D /* CommunityChatView.swift in Sources */,
 				9A330E532A8121DF0031190D /* LoginView.swift in Sources */,
