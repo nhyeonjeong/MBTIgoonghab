@@ -46,6 +46,7 @@ struct HowToFriendView: View {
                 }
             }
             Image("line")
+            // 크기 수정하시길
             VStack{
                 ScrollView{
                     Text("ESTP랑 친해지는 법!")

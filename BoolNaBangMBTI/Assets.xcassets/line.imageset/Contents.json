@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "스크린샷 2023-08-11 오후 8.16.35.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "line.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
