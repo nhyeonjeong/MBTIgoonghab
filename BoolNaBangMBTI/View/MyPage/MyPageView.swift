@@ -14,6 +14,7 @@ struct MyPageView: View {
     @State var isShowingAlert : Bool = false
     
     var body: some View {
+
         NavigationStack{
             VStack(alignment: .leading){
                 HStack{
@@ -87,6 +88,7 @@ struct MyPageView: View {
                 Alert(title: Text("로그아웃 하시겠습니까?"),message: nil,dismissButton: .default(Text("YES")))
             }
         }
+
     }
 }
 struct MyPageView_Previews: PreviewProvider {
