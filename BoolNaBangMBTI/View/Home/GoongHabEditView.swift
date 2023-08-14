@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GoongHabEditView: View {
-    
+
     @ObservedObject var opponentStore: OpponentStore
     @Binding var isShowingEditSheet: Bool
     
@@ -72,12 +72,17 @@ struct GoongHabEditView: View {
         
     }
     
+
 }
 
 struct GoongHabEditView_Previews: PreviewProvider {
     static var previews: some View {
+
+
+
  
         GoongHabEditView(opponentStore: OpponentStore(), isShowingEditSheet: .constant(true))
         
+
     }
 }
