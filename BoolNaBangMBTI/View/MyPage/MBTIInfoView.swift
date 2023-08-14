@@ -4,7 +4,7 @@
 //
 //  Created by 임병구 on 2023/08/07.
 //
-
+// MyPageView에서 'Mbti'클릭 시 각 Mbti정보 탭뷰 연결
 import SwiftUI
 
 struct MBTIInfoView: View {
