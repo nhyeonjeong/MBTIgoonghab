@@ -8,9 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8B253B732A82742A00EA2E49 /* GoongHabEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B253B722A82742A00EA2E49 /* GoongHabEditView.swift */; };
-
 		9909BA382A866E100095D975 /* HTFButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9909BA372A866E100095D975 /* HTFButtonView.swift */; };
-
+		99D367FA2A8A17960047F41D /* HTFInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D367F92A8A17960047F41D /* HTFInfoView.swift */; };
 		9A330E2A2A81137D0031190D /* BoolNaBangMBTIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A330E292A81137D0031190D /* BoolNaBangMBTIApp.swift */; };
 		9A330E2C2A81137D0031190D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A330E2B2A81137D0031190D /* ContentView.swift */; };
 		9A330E2E2A81137E0031190D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A330E2D2A81137E0031190D /* Assets.xcassets */; };
@@ -36,9 +35,8 @@
 
 /* Begin PBXFileReference section */
 		8B253B722A82742A00EA2E49 /* GoongHabEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoongHabEditView.swift; sourceTree = "<group>"; };
-
 		9909BA372A866E100095D975 /* HTFButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTFButtonView.swift; sourceTree = "<group>"; };
-
+		99D367F92A8A17960047F41D /* HTFInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTFInfoView.swift; sourceTree = "<group>"; };
 		9A330E262A81137D0031190D /* BoolNaBangMBTI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoolNaBangMBTI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A330E292A81137D0031190D /* BoolNaBangMBTIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolNaBangMBTIApp.swift; sourceTree = "<group>"; };
 		9A330E2B2A81137D0031190D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -146,6 +144,7 @@
 				9A330E392A811C760031190D /* HomeView.swift */,
 				9A330E3B2A811CD10031190D /* SafariTestView.swift */,
 				9A330E472A8120400031190D /* HowToFriendView.swift */,
+				99D367F92A8A17960047F41D /* HTFInfoView.swift */,
 				9909BA372A866E100095D975 /* HTFButtonView.swift */,
 				9A330E412A811E310031190D /* goongHabListView.swift */,
 				8B253B722A82742A00EA2E49 /* GoongHabEditView.swift */,
@@ -240,6 +239,7 @@
 			files = (
 				9A330E582A81220F0031190D /* MBTIInfoView.swift in Sources */,
 				9A330E462A8120270031190D /* ResultRomanticView.swift in Sources */,
+				99D367FA2A8A17960047F41D /* HTFInfoView.swift in Sources */,
 				9A7219512A826C810010E898 /* CircleView.swift in Sources */,
 				9A330E2C2A81137D0031190D /* ContentView.swift in Sources */,
 				8B253B732A82742A00EA2E49 /* GoongHabEditView.swift in Sources */,
