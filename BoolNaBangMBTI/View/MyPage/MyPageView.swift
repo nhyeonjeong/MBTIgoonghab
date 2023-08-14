@@ -4,7 +4,9 @@
 //
 //  Created by 임병구 on 2023/08/07.
 //
-
+// 진영
+// 이미지 + 닉네임 + Mbti 등등 데이터 연결하고
+// 디자인 변경...
 import SwiftUI
 
 struct MyPageView: View {
@@ -37,7 +39,7 @@ struct MyPageView: View {
                                 // 이부분을 클릭 시 mbti정보 보여주는 뷰로 넘겨줄건데. 이게 클릭이 가능하다는걸 어떻게 표현하는게 좋을까요? 지금상태는 사용자 관점에서 클릭이 되는지 모를 것 같아요
                             }//.tint(.black)
                             NavigationLink {
-                                SettingView()
+                                MyInfoChangeView()
                             } label: {
                                 Text("내 정보관리 >")
                             }

@@ -188,8 +188,8 @@
 			children = (
 				9A330E392A811C760031190D /* HomeView.swift */,
 				9A330E3B2A811CD10031190D /* SafariTestView.swift */,
-				99D367FB2A8A33210047F41D /* HTFInfoView.swift */,
 				9A330E472A8120400031190D /* HowToFriendView.swift */,
+				99D367FB2A8A33210047F41D /* HTFInfoView.swift */,
 				9909BA372A866E100095D975 /* HTFButtonView.swift */,
 				9A330E412A811E310031190D /* goongHabListView.swift */,
 				8B253B722A82742A00EA2E49 /* GoongHabEditView.swift */,
