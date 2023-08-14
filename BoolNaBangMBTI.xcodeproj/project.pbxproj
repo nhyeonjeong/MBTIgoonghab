@@ -13,7 +13,7 @@
 		9909BA382A866E100095D975 /* HTFButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9909BA372A866E100095D975 /* HTFButtonView.swift */; };
 
 		99D367FC2A8A33210047F41D /* HTFInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D367FB2A8A33210047F41D /* HTFInfoView.swift */; };
-    d6e5cd665382806d687cb83f1205f2ab608aba85
+
 		9A330E2A2A81137D0031190D /* BoolNaBangMBTIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A330E292A81137D0031190D /* BoolNaBangMBTIApp.swift */; };
 		9A330E2C2A81137D0031190D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A330E2B2A81137D0031190D /* ContentView.swift */; };
 		9A330E2E2A81137E0031190D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A330E2D2A81137E0031190D /* Assets.xcassets */; };
