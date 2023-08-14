@@ -10,13 +10,14 @@ import SwiftUI
 
 
 struct ResultProjectView: View {
+    var personStore: PersonStore = PersonStore()
     var body: some View {
         VStack{
             Text("프로젝트 궁합")
                 .font(.largeTitle)
                 .fontWeight(.semibold)
                 .padding()
-            CircleView()
+            CircleView(personStore: personStore)
             
             
             
