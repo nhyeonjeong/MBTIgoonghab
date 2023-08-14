@@ -4,12 +4,13 @@
 //
 //  Created by 윤진영 on 2023/08/14.
 //
-
+// 진영
+// 선택한 mbti 내용만 보이게 해줘야함~!
 import SwiftUI
 
 struct HTFInfoView: View {
     
-    @ObservedObject var howToGetClose: OpponentStore = OpponentStore()
+    @ObservedObject var howToFriend: OpponentStore = OpponentStore()
     @State var newMbti: MBTItype = MBTItype.ENFJ
     
     
@@ -27,7 +28,8 @@ struct HTFInfoView: View {
                     }
                     .frame(width: 120, height: 200)
                     .padding(60)
-                    Text("\(mbti.howToGetClose)")
+                    Text("\(mbti.howToFriend)")
+                        .font(.headline)
                 }
             }
         }

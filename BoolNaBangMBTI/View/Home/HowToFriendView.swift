@@ -6,6 +6,7 @@
 //
 
 // 진영
+// mbti 선택시 해당하는 mbti에 해당하는 내용만 보이게 해줘야함~!
 import SwiftUI
 
 struct HowToFriendView: View {

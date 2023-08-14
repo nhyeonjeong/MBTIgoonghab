@@ -54,44 +54,8 @@ enum MBTItype: String, CaseIterable { //picker 위한 프로토콜
     }
 
     
+    // 홈뷰 - Mbti별 대처법
     var howToFriend: String {
-        switch self {
-        case .ESTP :
-            return ""
-        case .ESTJ :
-            return ""
-        case .ESFP :
-            return ""
-        case .ESFJ :
-            return ""
-        case .ENFP :
-            return ""
-        case .ENFJ :
-            return ""
-        case .ENTP :
-            return ""
-        case .ENTJ :
-            return ""
-        case .ISTP :
-            return ""
-        case .ISTJ :
-            return ""
-        case .ISFP :
-            return ""
-        case .ISFJ :
-            return ""
-        case .INFP :
-            return ""
-        case .INFJ :
-            return ""
-        case .INTP:
-            return ""
-        case .INTJ :
-            return ""
-            
-        }
-    }
-    var howToGetClose: String {
         switch self {
         case .ESTP :
             return "오늘 집에 안간다~ 라고 외치면서 밤새 흥청망청 술 먹기\n나 오늘 정말 흥청망청 놀아보고 싶어 라고 하면서 ESTP랑 첫차시간까지 놀자고 하기"
@@ -125,10 +89,46 @@ enum MBTItype: String, CaseIterable { //picker 위한 프로토콜
             return "말할 때마다 INTP 얼굴 보면서 경청하고, 적절한 호응과 리액션 해주기\n얼굴 보면서 경청하는 것이 포인트"
         case .INTJ :
             return "INTJ랑 마주칠 때마다 과자, 초콜릿 같은 간식거리 손에 쥐어주기 \n만약, 다이어트 중이라면 마데카솔,비타민 등 쥐어주기"
-
         }
     }
-}  
+    // 마이페이지뷰 - Mbti정보 (웹뷰로 보여주기)
+    var mbtiURL: String {
+        switch self {
+        case .ESTP :
+            return ""
+        case .ESTJ :
+            return ""
+        case .ESFP :
+            return ""
+        case .ESFJ :
+            return ""
+        case .ENFP :
+            return ""
+        case .ENFJ :
+            return ""
+        case .ENTP :
+            return ""
+        case .ENTJ :
+            return ""
+        case .ISTP :
+            return ""
+        case .ISTJ :
+            return ""
+        case .ISFP :
+            return ""
+        case .ISFJ :
+            return ""
+        case .INFP :
+            return ""
+        case .INFJ :
+            return ""
+        case .INTP:
+            return ""
+        case .INTJ :
+            return ""
+        }
+    }
+}
 
 struct Profile: Identifiable {
     var id: UUID = UUID()
@@ -144,18 +144,11 @@ struct Opponent: Identifiable {
     var oppMbti: MBTItype
 }
 
-struct HowtoGetClose: Identifiable{
-    var id: UUID = UUID()
-    var oppMbti: MBTItype
-}
-
 class OpponentStore : ObservableObject{
     @Published var opponents: [Opponent] = [
         Opponent(oppName: "윤진영", oppMbti: .ISTP)
     ]
-    var howToGetClose:[HowtoGetClose] = [
-        HowtoGetClose(oppMbti: .ENFJ)
-    ]
+
     
     func removeOpp(at offsets: IndexSet) {
         opponents.remove(atOffsets: offsets)
@@ -169,14 +162,7 @@ class OpponentStore : ObservableObject{
         
     }
 
-//    func choise(mbti: Opponent){
-//        let index = 0
-//        for temp in howToGetClose {
-//            if temp.id == mbti.id {
-//
-//            }
-//        }
-//    }
+
     
     }
 
