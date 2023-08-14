@@ -181,3 +181,28 @@ class OpponentStore : ObservableObject{
     }
 
 
+//CircleView위한 데이터 /현정
+struct Cases: Identifiable {
+    var id: UUID = UUID()
+    var name: String
+    var mbti: String // 나중에 열거형으로 바꾸기
+
+}
+
+
+class PersonStore: ObservableObject {
+    //데이터 있다 치고!
+    @Published var casePerson: [[Cases]] = [[Cases(name: "남현정", mbti: "ESTP"),Cases(name: "김종찬", mbti: "ESFP")],
+                                            [Cases(name: "박명수", mbti: "ISTP")],
+                                            [Cases(name: "유재석", mbti: "ISFP"), Cases(name: "윤진영", mbti: "ISTP")],
+                                            [Cases(name: "임병구", mbti: "ENFP"),Cases(name: "짱구", mbti: "ENTP")],
+                                            [Cases(name: "정준하", mbti: "ENFJ")]
+    ]
+    
+    func addCases() {
+//        ForEach(caseNumber, id:\.self) { i in
+//
+//        }
+    }
+    
+}
