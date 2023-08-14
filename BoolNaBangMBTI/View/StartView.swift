@@ -13,6 +13,8 @@ struct StartView: View {
     
     // 텍스트 필드 저장 변수
     @State var nameField: String = ""
+    @State var MBTIResult: String = ""
+    
     
     // Picker 선택지 변수
     var eiPicker: [String] = ["E", "I"]
@@ -96,12 +98,16 @@ struct StartView: View {
                         .frame(width: 150, height: 30)
                         Text("\(pjPicker[pjIndex])")
                     }
+//                    MBTIResult = "\(eiPicker[eiIndex]) + \(eiPicker[eiIndex]) + \(eiPicker[eiIndex]) + \(eiPicker[eiIndex])"
                 }
                 
+                Text("결과 : \(MBTIResult)")
+                
                 // 확인하고 넘어가는 버튼
-                // 다음화면 -> HomeView()
+                // 다음화면 -> ContentView()
+                // 탭 뷰 화면
                 NavigationLink {
-                    HomeView()
+                    ContentView()
                 } label: {
                     Text("여기까지")
                         .font(.system(size: 22))
