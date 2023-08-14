@@ -11,30 +11,64 @@ import SwiftUI
 
 struct CircleView: View {
     
+    @State private var progress:CGFloat = .zero
     
-    var personStore: PersonStore
-    //일단 여기에 데이텋
-    //단계마다 해당하는 사람 수
-    var caseNumber = [2,1,2,2,1]
-    
-    
-    
-    var randomFloat: CGFloat {
-        .random(in: 0.0 ... 2.0)
-    }
-
     var body: some View {
         ZStack{
             
-            Color(.white).ignoresSafeArea()
+            Color(.blue).ignoresSafeArea()
             
-            //순서는 밖에 원->안에 원
+            
+            // 먼지
+            ForEach(1..<100, id: \.self) { index in
+                
+                let xPosition =
+                Array(1...Int(UIScreen.main.bounds.width))
+                    .randomElement() ?? 0
+                let yPosition =
+                Array(1...Int(UIScreen.main.bounds.width))
+                    .randomElement() ?? 0
+                
+                Circle()
+                    .fill(.white)
+                    .frame(width: 3)
+                    .position(x: CGFloat(xPosition), y: CGFloat(yPosition))
+                
+            }
+            
+            
+            
+            
+            
             GeometryReader { geo in
                 
                 let localFrame = geo.frame(in: .local)
                 let diameter = geo.size.width
                 let radius = diameter / 2
-
+                let angle = progress * .pi
+                
+                Circle()
+                    .stroke(Color.gray.opacity(0.4),lineWidth: 5)
+                    .rotationEffect(.degrees(-90)) // 값의 차이가 어떻게 달라지는지?
+                    .frame(width: diameter)
+                    .position(x: localFrame.midX, y: localFrame.midY)
+                    .overlay{
+                        
+                        Circle()
+                            .stroke(Color.white,lineWidth:5)
+                            .frame(width:30)
+                            .position(x: radius * (1 - cos(angle)), y: geo.size.height / 2 - radius * sin(angle))
+                    }
+                
+            }
+            .frame(width: 420)
+            
+            GeometryReader { geo in
+                
+                let localFrame = geo.frame(in: .local)
+                let diameter = geo.size.width
+                let radius = diameter / 2
+                let angle = progress * .pi
                 
                 Circle()
                     .stroke(Color.gray.opacity(0.4),lineWidth: 5)
@@ -42,70 +76,12 @@ struct CircleView: View {
                     .frame(width: diameter)
                     .position(x: localFrame.midX, y: localFrame.midY)
                     .overlay{
-                        ForEach(0..<caseNumber[4], id:\.self) { i in
-                            let randomAngle = randomFloat * .pi
-
-                            Path { path in
-                                path.move(to: CGPoint(x: localFrame.midX, y: localFrame.midY))
-                                
-                                path.addLine(to: CGPoint(x: radius * (1 - cos(randomAngle)), y: geo.size.height / 2 - radius * sin(randomAngle)))
-                            }
-                            .stroke(.red, lineWidth: 2)
-                            /*
-                            Circle()
-                                .stroke(Color.red,lineWidth:5)
-                                .frame(width:15)
-                                .position(x: radius * (1 - cos(randomAngle)), y: geo.size.height / 2 - radius * sin(randomAngle))
-                             */
-                            
-                            Text("\(personStore.casePerson[4][i].name)")
-                                .position(x: radius * (1 - cos(randomAngle)), y: geo.size.height / 2 - radius * sin(randomAngle))
-                            
-                            
-
-                        }
-                         
+                        
+                        Circle()
+                            .stroke(Color.white,lineWidth:5)
+                            .frame(width:30)
+                            .position(x: radius * (1 - cos(angle)), y: geo.size.height / 2 - radius * sin(angle))
                     }
-            
-                
-            }
-            .frame(width: 375)
-            
-            GeometryReader { geo in
-                
-                let localFrame = geo.frame(in: .local)
-                let diameter = geo.size.width
-                let radius = diameter / 2
-
-                Circle()
-                    .stroke(Color.gray.opacity(0.4),lineWidth: 5)
-//                    .rotationEffect(.degrees(-180)) //여기서는 필요없는듯.
-                    .frame(width: diameter)
-                    .position(x: localFrame.midX, y: localFrame.midY)
-                    .overlay{
-                        ForEach(0..<caseNumber[3], id:\.self) { i in
-                            let randomAngle = randomFloat * .pi
-
-                            Path { path in
-                                path.move(to: CGPoint(x: localFrame.midX, y: localFrame.midY))
-                                
-                                path.addLine(to: CGPoint(x: radius * (1 - cos(randomAngle)), y: geo.size.height / 2 - radius * sin(randomAngle)))
-                            }
-                            .stroke(.black, lineWidth: 2)
-                            /*
-                            Circle()
-                                .stroke(Color.black,lineWidth:5)
-                                .frame(width:15)
-                                .position(x: radius * (1 - cos(randomAngle)), y: geo.size.height / 2 - radius * sin(randomAngle))
-                             */
-                            
-                            Text("\(personStore.casePerson[3][i].name)")
-                                .position(x: radius * (1 - cos(randomAngle)), y: geo.size.height / 2 - radius * sin(randomAngle))
-                            
-                        }
-                         
-                    }
-            
                 
             }
             .frame(width: 300)
@@ -115,93 +91,20 @@ struct CircleView: View {
                 let localFrame = geo.frame(in: .local)
                 let diameter = geo.size.width
                 let radius = diameter / 2
-//                let randomAngle = randomFloat * .pi
-
-                Circle()
-                    .stroke(Color.gray.opacity(0.4),lineWidth: 5)
-                    .rotationEffect(.degrees(-180))
-                    .frame(width: diameter)
-                    .position(x: localFrame.midX, y: localFrame.midY)
+                let angle = progress * .pi
                 
-                //밑에 숫자는
-                ForEach(0..<caseNumber[2], id:\.self) { i in
-                    let randomAngle = randomFloat * .pi
-
-                    Path { path in
-                        path.move(to: CGPoint(x: localFrame.midX, y: localFrame.midY))
-                        
-                        path.addLine(to: CGPoint(x: radius * (1 - cos(randomAngle)), y: geo.size.height / 2 - radius * sin(randomAngle)))
-                    }
-                    .stroke(.yellow, lineWidth: 2)
-                    
-                    /*
-                     Circle()
-                     .stroke(Color.yellow,lineWidth:5)
-                     .frame(width:15)
-                     .position(x: radius * (1 - cos(randomAngle)), y: geo.size.height / 2 - radius * sin(randomAngle))
-                    */
-                    Text("\(personStore.casePerson[2][i].name)")
-                        .position(x: radius * (1 - cos(randomAngle)), y: geo.size.height / 2 - radius * sin(randomAngle))
-                    
-                    
-                }
-//                    .overlay{
-//                        ForEach(0..<3, id:\.self) { _ in
-//                            Path { path in
-//                                path.move(to: CGPoint(x: localFrame.midX, y: localFrame.midY))
-//
-//                                path.addLine(to: CGPoint(x: radius * (1 - cos(randomAngle)), y: geo.size.height / 2 - radius * sin(randomAngle)))
-//                            }
-//                            .stroke(.yellow, lineWidth: 5)
-//
-//                             Circle()
-//                             .stroke(Color.yellow,lineWidth:5)
-//                             .frame(width:15)
-//                             .position(x: radius * (1 - cos(randomAngle)), y: geo.size.height / 2 - radius * sin(randomAngle))
-//
-//
-//                        }
-                       
-                         
-//                    }
-            
-                
-            }
-            .frame(width: 225)
-            
-            GeometryReader { geo in
-                
-                let localFrame = geo.frame(in: .local)
-                let diameter = geo.size.width
-                let radius = diameter / 2
-
                 Circle()
                     .stroke(Color.gray.opacity(0.4),lineWidth: 5)
                     .rotationEffect(.degrees(-180))
                     .frame(width: diameter)
                     .position(x: localFrame.midX, y: localFrame.midY)
                     .overlay{
-                        ForEach(0..<caseNumber[1], id:\.self) { i in
-                            let randomAngle = randomFloat * .pi
-                            Path { path in
-                                path.move(to: CGPoint(x: localFrame.midX, y: localFrame.midY))
-                                
-                                path.addLine(to: CGPoint(x: radius * (1 - cos(randomAngle)), y: geo.size.height / 2 - radius * sin(randomAngle)))
-                            }
-                            .stroke(.green, lineWidth: 2)
-                            /*
-                            Circle()
-                                .stroke(Color.green,lineWidth:5)
-                                .frame(width:15)
-                                .position(x: radius * (1 - cos(randomAngle)), y: geo.size.height / 2 - radius * sin(randomAngle))
-                             */
-                            
-                            Text("\(personStore.casePerson[1][i].name)")
-                                .position(x: radius * (1 - cos(randomAngle)), y: geo.size.height / 2 - radius * sin(randomAngle))
-                            
-                        }
+                        
+                        Circle()
+                            .stroke(Color.white,lineWidth:5)
+                            .frame(width:30)
+                            .position(x: radius * (1 - cos(angle)), y: geo.size.height / 2 - radius * sin(angle))
                     }
-            
                 
             }
             .frame(width: 150)
@@ -211,46 +114,87 @@ struct CircleView: View {
                 let localFrame = geo.frame(in: .local)
                 let diameter = geo.size.width
                 let radius = diameter / 2
-
+                let angle = progress * .pi
+                
                 Circle()
                     .stroke(Color.gray.opacity(0.4),lineWidth: 5)
                     .rotationEffect(.degrees(-180))
                     .frame(width: diameter)
                     .position(x: localFrame.midX, y: localFrame.midY)
                     .overlay{
-                        ForEach(0..<caseNumber[0], id:\.self) { i in
-                            let randomAngle = randomFloat * .pi
-                            
-                            Path { path in
-                                path.move(to: CGPoint(x: localFrame.midX, y: localFrame.midY))
-                                
-                                path.addLine(to: CGPoint(x: radius * (1 - cos(randomAngle)), y: geo.size.height / 2 - radius * sin(randomAngle)))
-                            }
-                            .stroke(.blue, lineWidth: 2)
-                            /*
-                            Circle()
-                                .stroke(Color.blue,lineWidth:5)
-                                .frame(width:15)
-                                .position(x: radius * (1 - cos(randomAngle)), y: geo.size.height / 2 - radius * sin(randomAngle))
-                             */
-                            Text("\(personStore.casePerson[0][i].name)")
-                                .position(x: radius * (1 - cos(randomAngle)), y: geo.size.height / 2 - radius * sin(randomAngle))
-                            
-                        }
-                         
+                        
+                        Circle()
+                            .stroke(Color.white,lineWidth:5)
+                            .frame(width:30)
+                            .position(x: radius * (1 - cos(angle)), y: geo.size.height / 2 - radius * sin(angle))
                     }
-            
                 
             }
-            .frame(width: 75)
+            .frame(width: 80)
+            
+            
+            
+            Circle()
+                .fill(.gray.opacity(0.4))
+                .frame(width: 301)
+            
+            Circle()
+                .fill(.gray.opacity(0.5))
+                .frame(width: 280)
+            
+            GeometryReader { reader in
+                
+                let localFrame = reader.frame(in: .local)
+                
+                Circle()
+                    .fill(.white.gradient.opacity(0.3))
+                    .position(x: localFrame.midX, y: localFrame.midY)
+                    .overlay {
+                        
+                        ZStack{
+                            
+                            Circle()
+                                .fill(.gray.opacity(0.2))
+                                .frame(width: 60)
+                                .position(x: localFrame.midX - 60 ,y:localFrame.midY - 60)
+                            
+                            Circle()
+                                .fill(.gray.opacity(0.2))
+                                .frame(width: 40)
+                                .position(x: localFrame.midX - 90 ,y:localFrame.midY + 20)
+                            
+                            Circle()
+                                .fill(.gray.opacity(0.2))
+                                .frame(width: 25)
+                                .position(x: localFrame.midX - 40 ,y:localFrame.midY - 20)
+                            
+                            
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        
+                    }
+                
+            }
+            .frame(width: 250)
+            
+      
+            
         }
-    
-    
+        .onAppear {
+            
+            Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) {
+                timer in
+                withAnimation {
+                    progress += 0.04
+                }
+            }
+            
+        }
     }
 }
 
 struct CircleView_Previews: PreviewProvider {
     static var previews: some View {
-        CircleView(personStore: PersonStore())
+        CircleView()
     }
 }
