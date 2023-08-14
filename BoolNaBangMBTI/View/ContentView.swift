@@ -7,20 +7,21 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
-}
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+struct ContentView: View {
+    
+    @StateObject var kakaoAuthVM : KakaoAuthVM = KakaoAuthVM()
+    
+    
+    var body: some View {
+
+        VStack(spacing:20){
+            Button("카카오 로그인", action: {
+                kakaoAuthVM.handleKakaoLogin()
+            })
+            Button("카카오 로그아웃", action: {})
+            
+                
+        }
     }
 }
