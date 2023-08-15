@@ -8,11 +8,10 @@
 import Foundation
 
 
-//
 
-enum MBTItype: String, CaseIterable { //picker 위한 프로토콜
-    case ESTP, ESTJ, ESFP, ESFJ, ENFP, ENFJ, ENTP, ENTJ
-    case ISTP, ISTJ, ISFP, ISFJ, INFP, INFJ, INTP, INTJ
+enum MBTItype: Int, CaseIterable { //picker 위한 프로토콜
+    case ENTJ, ENTP, INTJ, INTP, ESTJ, ESFJ, ISTJ, ISFJ
+    case ENFJ, ENFP, INFJ, INFP, ESTP, ESFP, ISTP, ISFP
 
     var imageURL: String {
         switch self {
@@ -91,6 +90,7 @@ enum MBTItype: String, CaseIterable { //picker 위한 프로토콜
             return "INTJ랑 마주칠 때마다 과자, 초콜릿 같은 간식거리 손에 쥐어주기 \n만약, 다이어트 중이라면 마데카솔,비타민 등 쥐어주기"
         }
     }
+    
     // 마이페이지뷰 - Mbti정보 (웹뷰로 보여주기)
     var mbtiURL: String {
         switch self {
@@ -130,6 +130,8 @@ enum MBTItype: String, CaseIterable { //picker 위한 프로토콜
     }
 }
 
+
+
 struct Profile: Identifiable {
     var id: UUID = UUID()
     var name: String
@@ -144,11 +146,11 @@ struct Opponent: Identifiable {
     var oppMbti: MBTItype
 }
 
-class OpponentStore : ObservableObject{
+class OpponentStore : ObservableObject {
     @Published var opponents: [Opponent] = [
         Opponent(oppName: "윤진영", oppMbti: .ISTP)
     ]
-
+    
     
     func removeOpp(at offsets: IndexSet) {
         opponents.remove(atOffsets: offsets)
@@ -156,15 +158,13 @@ class OpponentStore : ObservableObject{
     }
     
     func addOpp(opponent: Opponent) {
-
+        
         opponents.append(opponent)
-
+        
         
     }
-
-
     
-    }
+}
 
 
 //CircleView위한 데이터 /현정
@@ -192,3 +192,43 @@ class PersonStore: ObservableObject {
     }
     
 }
+
+let mbtiScore: [[Int]] = [
+//    [3,4,4,5,3,4,4,5,2,3,2,3,1,2,1,2], //INFP
+//    [4,3,5,4,4,3,5,4,3,2,3,2,2,1,2,1], //ENFP
+//    [4,5,3,4,4,5,3,4,1,2,1,2,2,3,2,3], //INFJ
+//    [5,4,4,3,5,4,4,3,2,1,2,1,3,2,3,2], //ENFJ
+//    [4,5,3,4,4,5,3,4,1,2,1,2,2,3,2,3], //INTJ
+//    [5,4,4,3,5,4,4,3,2,1,2,1,3,2,3,2], //ENTJ
+//    [3,4,4,5,3,4,4,5,2,3,2,3,1,2,1,2], //INTP
+//    [4,3,5,4,4,3,5,4,3,2,3,2,2,1,2,1], //ENTP
+//    [1,2,2,3,1,2,2,3,4,5,4,5,3,4,3,5], //ISFP
+//    [2,1,3,2,2,1,3,2,5,4,5,4,4,3,4,3], //ESFP
+//    [1,2,2,3,1,2,2,3,4,5,4,5,3,4,3,4], //ISTP
+//    [2,1,3,2,2,1,3,2,5,4,5,4,4,3,4,3], //ESTP
+//    [2,3,1,2,2,3,1,2,3,4,3,4,4,5,4,5], //ISFJ
+//    [3,2,2,1,3,2,2,1,4,3,4,3,5,4,5,4], //ESFJ
+//    [2,3,1,2,2,3,1,2,3,4,3,4,4,5,4,5], //ISTJ
+//    [3,2,2,1,3,2,2,1,4,3,4,3,5,4,5,4], //ESTJ
+    //
+    [1,2,3,3,2,1,2,1,2,3,3,5,4,4,3,5],  //ENTJ
+    [2,4,3,3,4,4,5,5,3,2,3,3,2,1,2,1],  //ENTP
+    [3,3,3,2,2,1,3,1,3,3,3,4,5,5,3,4],  //INTJ
+    [3,3,2,3,4,5,3,5,5,3,4,2,2,1,2,1],  //INTP
+    [2,4,2,4,3,2,3,3,1,3,1,5,1,3,3,5],  //ESTJ
+    [1,4,1,5,2,3,3,3,3,4,2,3,3,2,5,3],  //ESFJ
+    [2,5,3,3,3,3,3,2,1,5,1,4,3,3,2,4],  //ISTJ
+    [1,5,1,5,3,3,2,2,2,5,2,3,3,3,4,1],  //ISFJ
+    [2,3,3,5,1,3,1,2,4,2,3,3,4,4,5,3],  //ENFJ
+    [3,2,3,3,4,4,5,5,2,3,3,2,1,1,1,3],  //ENFP
+    [3,3,3,4,1,2,1,2,3,3,3,1,5,5,5,3],  //INFJ
+    [5,3,4,2,5,3,4,3,3,2,1,3,1,2,2,2],  //INFP
+    [4,2,5,2,1,3,3,3,4,1,5,1,3,2,3,3],  //ESTP
+    [4,1,5,1,3,2,3,3,4,1,5,2,2,2,3,3],  //ESFP
+    [3,2,3,2,3,5,2,4,5,1,5,1,3,3,2,2],  //ISTP
+    [5,1,4,1,5,3,4,1,3,3,3,2,3,3,2,1]   //ISFP
+      
+    /*
+     ENTJ,ENTP,INTJ,INTP,ESTJ,ESFJ,ISTJ,ISFJ,ENFJ,ENFP,INFJ,INFP,ESTP,ESFP,ISTP,ISFP
+     */
+]
