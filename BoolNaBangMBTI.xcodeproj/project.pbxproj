@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6412526E2A8BA90A007E713F /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6412526D2A8BA90A007E713F /* TestView.swift */; };
 		6488FF7A2A8A09EE00B53A09 /* TabCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6488FF792A8A09EE00B53A09 /* TabCustomView.swift */; };
 		6488FF7C2A8A25C700B53A09 /* CommunityNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6488FF7B2A8A25C700B53A09 /* CommunityNoticeView.swift */; };
 		8B253B732A82742A00EA2E49 /* GoongHabEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B253B722A82742A00EA2E49 /* GoongHabEditView.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6412526D2A8BA90A007E713F /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		6488FF792A8A09EE00B53A09 /* TabCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCustomView.swift; sourceTree = "<group>"; };
 		6488FF7B2A8A25C700B53A09 /* CommunityNoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityNoticeView.swift; sourceTree = "<group>"; };
 		8B253B722A82742A00EA2E49 /* GoongHabEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoongHabEditView.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				9A330E3D2A811CF00031190D /* StartView.swift */,
+				6412526D2A8BA90A007E713F /* TestView.swift */,
 				9A330E2B2A81137D0031190D /* ContentView.swift */,
 				6488FF792A8A09EE00B53A09 /* TabCustomView.swift */,
 				9A330E4C2A8120EB0031190D /* Home */,
@@ -306,6 +309,7 @@
 				9A7219512A826C810010E898 /* CircleView.swift in Sources */,
 				6488FF7A2A8A09EE00B53A09 /* TabCustomView.swift in Sources */,
 				9A330E2C2A81137D0031190D /* ContentView.swift in Sources */,
+				6412526E2A8BA90A007E713F /* TestView.swift in Sources */,
 				99D367FC2A8A33210047F41D /* HTFInfoView.swift in Sources */,
 				8B253B732A82742A00EA2E49 /* GoongHabEditView.swift in Sources */,
 				9A330E5C2A81225C0031190D /* SettingView.swift in Sources */,

@@ -21,9 +21,9 @@ struct HowToFriendView: View {
             ScrollView{
                 HTFInfoView()
             }
+        }
     }
-    }
-    }
+}
 
 struct HowToFriendView_Previews: PreviewProvider {
     static var previews: some View {
