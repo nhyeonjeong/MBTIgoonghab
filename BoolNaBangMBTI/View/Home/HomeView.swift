@@ -12,23 +12,30 @@ struct HomeView: View {
     
     @StateObject var kakaoAuthVM : KakaoAuthVM = KakaoAuthVM()
     
+    @State var selectedButton: Bool = true
+//    var projectButton: Bool = false
+    
     var body: some View {
             NavigationStack{
                 VStack{
                     Spacer()
                     NavigationLink {
-                        goongHabListView()
+                        
+                        goongHabListView(selectedButton: true) //true면 연애궁합
                     } label: {
                         Text("연애궁합")
                             .frame(width: 250, height: 50)
                     } .padding()
+                    
                     NavigationLink {
-                        goongHabListView()
+                        
+                        goongHabListView(selectedButton: false) //false면 프로젝트궁합
                     } label: {
                         Text("프로젝트 궁합")
                             .frame(width: 250, height: 50)
                     }
                     .padding()
+                    
                     NavigationLink {
                         HowToFriendView()
                     } label: {
