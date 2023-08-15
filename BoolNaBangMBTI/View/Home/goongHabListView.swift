@@ -14,11 +14,12 @@ struct goongHabListView: View {
     
 
     @ObservedObject var opponentStore: OpponentStore = OpponentStore()
-    
 
-    let resultNumber: Bool = true
 
     @State var isShowingEditSheet: Bool = false
+    
+    var selectedButton: Bool
+    
     var body: some View {
 
         VStack {
@@ -82,10 +83,10 @@ struct goongHabListView: View {
                 Spacer()
                 
                 NavigationLink {
-                    if resultNumber {
-                        ResultProjectView()
-                    } else {
+                    if selectedButton {
                         ResultRomanticView()
+                    } else {
+                        ResultProjectView()
                     }
 
                 } label: {
@@ -133,7 +134,7 @@ struct goongHabListView: View {
 struct goongHabListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            goongHabListView()
+            goongHabListView(selectedButton: true)
         }
     }
 }
