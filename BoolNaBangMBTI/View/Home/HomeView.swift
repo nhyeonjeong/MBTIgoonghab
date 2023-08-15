@@ -9,34 +9,62 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @StateObject var kakaoAuthVM : KakaoAuthVM = KakaoAuthVM()
+    
     var body: some View {
-        NavigationStack{
-            NavigationLink {
-                goongHabListView()
-            } label: {
-                Text("연애궁합")
-                    .frame(width: 250, height: 50)
-            } .padding()
-            NavigationLink {
-                goongHabListView()
-            } label: {
-                Text("프로젝트 궁합")
-                    .frame(width: 250, height: 50)
+            NavigationStack{
+                VStack{
+                    Spacer()
+                    NavigationLink {
+                        goongHabListView()
+                    } label: {
+                        Text("연애궁합")
+                            .frame(width: 250, height: 50)
+                    } .padding()
+                    NavigationLink {
+                        goongHabListView()
+                    } label: {
+                        Text("프로젝트 궁합")
+                            .frame(width: 250, height: 50)
+                    }
+                    .padding()
+                    NavigationLink {
+                        HowToFriendView()
+                    } label: {
+                        Text("MBTI별 대처법 ▶︎")
+                    }.tint(.white)
+                        .font(.title2 .bold())
+                        .foregroundColor(.black)
+                    
+                    
+                    
+                    Spacer()
+                    
+                }
+                .font(.largeTitle)
+                .tint(.indigo)
+                .buttonStyle(.borderedProminent)
+                .buttonBorderShape(.roundedRectangle(radius: 20))
+                .shadow(color: .gray, radius: 2, x: 0,y: 3)
+                
+                Spacer()
+                Button {
+                    kakaoAuthVM.handleKakaoLogin()
+                } label: {
+                    Image("kakao_login")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: UIScreen.main.bounds.width * 0.8)
+                        .padding()
+                }
+                
+                
+                
+                Spacer()
+
             }
-            .padding()
-            NavigationLink {
-                HowToFriendView()
-            } label: {
-                Text("MBTI별 대처법 ▶︎")
-            }.tint(.white)
-            .font(.title2 .bold())
-            .foregroundColor(.black)
-        }
-        .font(.largeTitle)
-        .tint(.indigo)
-        .buttonStyle(.borderedProminent)
-        .buttonBorderShape(.roundedRectangle(radius: 20))
-        .shadow(color: .gray, radius: 2, x: 0,y: 3)
+
     }
 }
 

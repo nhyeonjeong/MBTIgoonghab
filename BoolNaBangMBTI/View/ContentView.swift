@@ -13,7 +13,7 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @StateObject var kakaoAuthVM : KakaoAuthVM = KakaoAuthVM()
+  
     @State var tabBarIndex: Int = 1
     
     var body: some View {
@@ -30,13 +30,6 @@ struct ContentView: View {
                     default:
                         EmptyView()
                     }
-                    
-                    
-                    Button("카카오 로그인", action: {
-                        kakaoAuthVM.handleKakaoLogin()
-                    })
-                    Button("카카오 로그아웃", action: {})
-                    
                 }
                 Spacer()
                 
