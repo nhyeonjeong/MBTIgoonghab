@@ -14,7 +14,7 @@ struct StartView: View {
     // 텍스트 필드 저장 변수
     @State var nameField: String = ""
     @State var MBTIResult: String = ""
-    
+    @State var convert: MBTItype = .ISTP
     
     // Picker 선택지 변수
     var eiPicker: [String] = ["E", "I"]
@@ -98,17 +98,26 @@ struct StartView: View {
                         .frame(width: 150, height: 30)
                         Text("\(pjPicker[pjIndex])")
                     }
-//                    MBTIResult = "\(eiPicker[eiIndex]) + \(eiPicker[eiIndex]) + \(eiPicker[eiIndex]) + \(eiPicker[eiIndex])"
+                
+                    Button {
+                        makembtistring()
+//                            print(MBTIResult)
+                        convert = convertenum(string: MBTIResult)!
+//                            print(convert.self)
+                        user.name = nameField
+                        user.mbti = convert
+
+                    } label: {
+                        Text("저장")
+                    }
+                    
                 }
-                
-                Text("결과 : \(MBTIResult)")
-                
+
                 // 확인하고 넘어가는 버튼
                 // 다음화면 -> ContentView()
                 // 탭 뷰 화면
                 
                 NavigationLink {
-
                     ContentView()
                 } label: {
                     Text("여기까지")
@@ -133,12 +142,7 @@ struct StartView: View {
                             .shadow(radius: 3)
                     }
                 }
-                
-                Button("enum") {
-                    makembtistring()
-                    
-//                    let mbtitype = convertToEnum(from: MBTIResult)
-                }
+            
             }
         }
     }
@@ -147,8 +151,17 @@ struct StartView: View {
         user.mbti = mbti
     }
     func makembtistring() {
-            MBTIResult = "(eiPicker[eiIndex])(snPicker[snIndex])(ftPicker[ftIndex])(pjPicker[pjIndex])"
+            MBTIResult = "\(eiPicker[eiIndex])\(snPicker[snIndex])\(ftPicker[ftIndex])\(pjPicker[pjIndex])"
+    }
+    func convertenum (string: String) -> MBTItype? {
+        var mbti: MBTItype = .ENFJ
+        for x in MBTItype.allCases {
+            if MBTIResult == x.kind {
+                mbti = x
+            }
         }
+        return mbti
+    }
 }
 
 struct StartView_Previews: PreviewProvider {
