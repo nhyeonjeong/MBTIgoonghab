@@ -57,7 +57,7 @@ struct StartView: View {
                 // MBTI 선택 Picker
                 Group {
                     Text("👇Select MBTI👇")
-
+        
                     VStack {
                         Picker("Select E/I", selection: $eiIndex) {
                             ForEach(0..<2) {
@@ -106,7 +106,9 @@ struct StartView: View {
                 // 확인하고 넘어가는 버튼
                 // 다음화면 -> ContentView()
                 // 탭 뷰 화면
+                
                 NavigationLink {
+
                     ContentView()
                 } label: {
                     Text("여기까지")
@@ -131,9 +133,22 @@ struct StartView: View {
                             .shadow(radius: 3)
                     }
                 }
+                
+                Button("enum") {
+                    makembtistring()
+                    
+//                    let mbtitype = convertToEnum(from: MBTIResult)
+                }
             }
         }
     }
+    func setProfile(name: String, mbti: MBTItype) {
+        user.name = name
+        user.mbti = mbti
+    }
+    func makembtistring() {
+            MBTIResult = "(eiPicker[eiIndex])(snPicker[snIndex])(ftPicker[ftIndex])(pjPicker[pjIndex])"
+        }
 }
 
 struct StartView_Previews: PreviewProvider {

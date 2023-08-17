@@ -8,7 +8,6 @@
 import Foundation
 
 
-
 enum MBTItype: Int, CaseIterable { //picker 위한 프로토콜
     case ENTJ, ENTP, INTJ, INTP, ESTJ, ESFJ, ISTJ, ISFJ
     case ENFJ, ENFP, INFJ, INFP, ESTP, ESFP, ISTP, ISFP
@@ -140,6 +139,9 @@ struct Profile: Identifiable {
 
 }
 
+//사용자
+var user: Profile = Profile(name: "", mbti: .ISTP, gender: "")
+
 struct Opponent: Identifiable {
     var id: UUID = UUID()
     var oppName: String
@@ -148,8 +150,9 @@ struct Opponent: Identifiable {
 
 class OpponentStore : ObservableObject {
     @Published var opponents: [Opponent] = [
-        Opponent(oppName: "윤진영", oppMbti: .ISTP)
+        //Opponent(oppName: "윤진영", oppMbti: .ISTP)
     ]
+    
     
     
     func removeOpp(at offsets: IndexSet) {
@@ -193,6 +196,7 @@ class PersonStore: ObservableObject {
     
 }
 
+//연애궁합
 let mbtiScore: [[Int]] = [
 //    [3,4,4,5,3,4,4,5,2,3,2,3,1,2,1,2], //INFP
 //    [4,3,5,4,4,3,5,4,3,2,3,2,2,1,2,1], //ENFP

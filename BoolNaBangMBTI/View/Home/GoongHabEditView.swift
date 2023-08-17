@@ -27,7 +27,6 @@ struct GoongHabEditView: View {
                             Text(String(describing: mbti)).tag(mbti)
 
                         }
-
                     }
                     Spacer()
                     Button {//이름비어있으면 추가안되도록 추가로 해야함
@@ -44,7 +43,7 @@ struct GoongHabEditView: View {
                         HStack {
                             Text("\(member.oppName)")
                             Spacer()
-                            Text("\(member.oppMbti.rawValue)")
+                            Text("\(String(describing: member.oppMbti))") //Int타입인 열거형을 string으로 나오게
                             Spacer()
                         }
                     }
