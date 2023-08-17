@@ -12,6 +12,12 @@ enum MBTItype: Int, CaseIterable { //picker 위한 프로토콜
     case ENTJ, ENTP, INTJ, INTP, ESTJ, ESFJ, ISTJ, ISFJ
     case ENFJ, ENFP, INFJ, INFP, ESTP, ESFP, ISTP, ISFP
 
+    
+    var kind: String {
+            String(describing: self)
+    }
+    
+    
     var imageURL: String {
         switch self {
         case .ESTP :
