@@ -31,9 +31,10 @@ struct GoongHabEditView: View {
                     Spacer()
                     Button {//이름비어있으면 추가안되도록 추가로 해야함
                         opponentStore.addOpp(opponent: Opponent(oppName: newName, oppMbti: newMbti))
+                        newName = ""
                     } label: {
-                        Image(systemName: "plus")
-                    }
+                            Image(systemName: "plus")
+                    }.disabled(newName.isEmpty)
                     
                 }.padding()
                     .border(.red)

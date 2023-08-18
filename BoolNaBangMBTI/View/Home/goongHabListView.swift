@@ -84,7 +84,7 @@ struct goongHabListView: View {
                 
                 NavigationLink {
                     if selectedButton {
-                        ResultRomanticView()
+                        ResultRomanticView(opponentStore: opponentStore)
                     } else {
                         ResultProjectView()
                     }
@@ -92,6 +92,9 @@ struct goongHabListView: View {
                 } label: {
                     Text("결과보기").padding(7)
                 }
+                .simultaneousGesture(TapGesture().onEnded{
+                    opponentStore.calculate()
+                })
                 .background(.yellow) //색이 구리네요
                 .cornerRadius(5)
                 

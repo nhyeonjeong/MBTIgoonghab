@@ -153,26 +153,30 @@ struct Opponent: Identifiable {
     var oppName: String
     var oppMbti: MBTItype
     
-    var result: Int {
-            mbtiScore[user.mbti.rawValue][oppMbti.rawValue]
-        }
 }
 
 class OpponentStore : ObservableObject {
     @Published var opponents: [Opponent] = [
         //Opponent(oppName: "윤진영", oppMbti: .ISTP)
+  
         
     ]
    
+    @Published var stageOneList: [[Opponent]] = [
+        [],[],[],[],[]
+    
+    
+    ]
         
     
     func calculate() {
-//        for _ in {
-//            mbtiScore[MBTItype.ESFP.rawValue][MBTItype.ENFP.rawValue]
-//
-//        }
+        for opponent in opponents {
+           var resultInt = mbtiScore[user.mbti.rawValue][opponent.oppMbti.rawValue]
+            stageOneList[resultInt-1].append(opponent)
+        }
+        }
         
-    }
+    
     
     
     func removeOpp(at offsets: IndexSet) {
