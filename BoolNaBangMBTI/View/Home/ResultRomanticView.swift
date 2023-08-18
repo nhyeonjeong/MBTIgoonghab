@@ -69,6 +69,8 @@ struct ResultRomanticView: View {
             }
         }
     }
+    
+    
 }
 
 struct ResultRomanticView_Previews: PreviewProvider {

@@ -33,7 +33,7 @@ struct goongHabListView: View {
                 }
                 .frame(width: 50)
                 
-                Text("ISTP\nㅇㅇㅇ님")
+                Text("\(String(describing: user.mbti))\n\(user.name)님")
                 
             }.font(.title)
            
@@ -50,7 +50,7 @@ struct goongHabListView: View {
                
 
                 ForEach(opponentStore.opponents) { member in
-                    Text("\(member.oppName)    \(member.oppMbti.rawValue)")
+                    Text("\(member.oppName)    \(String(describing:member.oppMbti))")
 
                         
                 }

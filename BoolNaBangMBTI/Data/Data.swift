@@ -152,13 +152,27 @@ struct Opponent: Identifiable {
     var id: UUID = UUID()
     var oppName: String
     var oppMbti: MBTItype
+    
+    var result: Int {
+            mbtiScore[user.mbti.rawValue][oppMbti.rawValue]
+        }
 }
 
 class OpponentStore : ObservableObject {
     @Published var opponents: [Opponent] = [
         //Opponent(oppName: "윤진영", oppMbti: .ISTP)
+        
     ]
+   
+        
     
+    func calculate() {
+//        for _ in {
+//            mbtiScore[MBTItype.ESFP.rawValue][MBTItype.ENFP.rawValue]
+//
+//        }
+        
+    }
     
     
     func removeOpp(at offsets: IndexSet) {

@@ -119,12 +119,21 @@ struct StartView: View {
                 
                 NavigationLink {
                     ContentView()
+                    
                 } label: {
                     Text("여기까지")
                         .font(.system(size: 22))
                         .frame(width: 120, height: 60)
                         .foregroundColor(.white)
                 }
+                .simultaneousGesture(TapGesture().onEnded{
+                    makembtistring()
+//                            print(MBTIResult)
+                    convert = convertenum(string: MBTIResult)!
+//                            print(convert.self)
+                    user.name = nameField
+                    user.mbti = convert
+                })
                 .buttonStyle(.borderedProminent)
                 .tint(.indigo)
                 .cornerRadius(25)
