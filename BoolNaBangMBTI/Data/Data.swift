@@ -170,14 +170,14 @@ class OpponentStore : ObservableObject {
         
     
     func calculate() {
+        stageOneList = [
+            [],[],[],[],[]
+        ]
         for opponent in opponents {
-           var resultInt = mbtiScore[user.mbti.rawValue][opponent.oppMbti.rawValue]
-            stageOneList[resultInt-1].append(opponent)
+            var resultInt = mbtiScore[user.mbti.rawValue][opponent.oppMbti.rawValue]
+            stageOneList[resultInt - 1].append(opponent)
         }
-        }
-        
-    
-    
+    }
     
     func removeOpp(at offsets: IndexSet) {
         opponents.remove(atOffsets: offsets)
