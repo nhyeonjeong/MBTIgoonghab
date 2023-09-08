@@ -8,7 +8,7 @@
 import Foundation
 
 
-enum MBTItype: Int, CaseIterable { //picker 위한 프로토콜
+enum MBTItype: Int, CaseIterable, Codable { //picker 위한 프로토콜
     case ENTJ, ENTP, INTJ, INTP, ESTJ, ESFJ, ISTJ, ISFJ
     case ENFJ, ENFP, INFJ, INFP, ESTP, ESFP, ISTP, ISFP
 
@@ -135,14 +135,11 @@ enum MBTItype: Int, CaseIterable { //picker 위한 프로토콜
     }
 }
 
-
-
-struct Profile: Identifiable {
+struct Profile: Identifiable, Codable {
     var id: UUID = UUID()
     var name: String
     var mbti: MBTItype
     var gender: String
-
 }
 
 //사용자
