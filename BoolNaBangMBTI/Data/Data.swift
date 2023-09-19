@@ -171,7 +171,7 @@ class OpponentStore : ObservableObject {
             [],[],[],[],[]
         ]
         for opponent in opponents {
-            var resultInt = mbtiScore[user.mbti.rawValue][opponent.oppMbti.rawValue]
+            let resultInt = mbtiScore[user.mbti.rawValue][opponent.oppMbti.rawValue]
             stageOneList[resultInt - 1].append(opponent)
         }
     }
